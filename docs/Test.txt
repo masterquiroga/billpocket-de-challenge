@@ -1,0 +1,16 @@
+
+Instrucciones: 
+Dentro de la carpeta existe un único archivo en formato CSV, construye un notebook de Python para realizar las siguientes tareas.  
+	•	Coloca el valor de las columnas en el formato adecuado
+	•	Elimina del set de datos todas las transacciones donde el contracargo es mayor al monto.
+	•	¿Cuál es el monto total de transacciones completadas y fallidas?
+	•	Calcula el porcentaje de transacciones completas por comercio y por mes.
+	•	Crea una bandera por comercio y mes que indique si el comercio tuvo al menos una transacción en cada uno de los Estados. Utiliza 0 para indicar que no tuvo todos los estados en el mes y 1 para indicar que sí tuvo todos.
+	•	Por medio de la API de Banxico obtén el tipo de cambio (Tipo de cambio para solventar obligaciones denominadas en moneda extranjera Fecha de determinación (FIX)).
+https://www.banxico.org.mx/SieAPIRest/service/v1/
+	•	Transforma los valores monetarios de dólares a pesos (Ocupe el promedio mensual de los tipos de cambio). 
+	•	Exporta el DataFrame resultante en un archivo csv.
+Consideraciones:
+	•	La columna Id transacción debe ser numérica y con valores únicos.
+	•	La columna mes operación debe ser tipo date
+
