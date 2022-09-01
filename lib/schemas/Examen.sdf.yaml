@@ -1,0 +1,115 @@
+%YAML 1.2
+--- &metadata
+name: Examen
+authors:
+- Víctor G. G. Quiroga <masterquiroga@protonmail.ch>
+date: 2022-08-30
+version: 1  
+--- &reader
+format: csv
+options:
+  header: true
+  mode: FAILFAST
+  dateFormat: d/M/yyyy
+path: ../data/raw/Examen.csv
+--- &schema
+type: struct
+metadata:
+  description: >
+    Transactional aggregate of frequency, volume and chargeback severity by
+    merchant, (operational) month and status.
+fields:
+- name: Id transacci�n
+  type: string
+  nullable: false
+  metadata:
+    alias: tx_agg_id
+    description: Transaction aggregate ID in a four digits format.
+    validators:
+    - type: long
+    - min: 1001
+    - unique: true
+    comments: >
+      Best practice is to use snake-case and common field abreviations such
+      as 'tx' or 'agg' for transaction. I also use a validator pipeline field based in a
+      mongoose-like validation (since it is suitable as general-purpose validation) and
+      a parser pipeline field based on an intuitive standard (useful for the
+      later transformations).
+      Since, by the visual inspection of the CSV, there's a rogue '+' character we delete
+      it as well to keep data as tidy as possible.
+- name: Comercio Id
+  type: string
+  nullable: false
+  metadata:
+    alias: merchant_id
+    description: Merchant ID in digits format.
+    validators:
+    - type: long
+    - min: 0
+- name: Mes Operacion
+  type: date
+  nullable: false
+  metadata:
+    alias: op_month_date
+    description: Month of operation of this transaction coded as a date.
+    validators:
+    - type: date
+    comments: >
+      Another best practice from data-governance is to use data suffixes in
+      order to avoid confusion such as 'date', which conveniently allows date arithmetic.
+- name: Estado
+  type: string
+  nullable: false
+  metadata:
+    alias: status
+    validators:
+    - enum:
+      - EXPIRED
+      - ERROR
+      - CHARGE_PENDING
+      - FAILED
+      - CANCELLED
+      - IN_PROGRESS
+      - COMPLETED
+- name: Moneda
+  type: string
+  nullable: false
+  metadata: 
+    alias: cc
+    description: Currency code in ISO
+    validators:
+    - enum:
+      - COP
+      - ARS
+      - AED
+      - TWD
+      - EUR
+      - PKR
+      - JPY
+      - CLP
+      - MXN
+      - USD
+- name: "# Transacciones"
+  type: string
+  nullable: false
+  metadata:
+    alias: tx_cnt
+    desription: 
+    validators:
+    - min: 0
+- name: Monto Transaccion
+  type: string
+  nullable: false
+  metadata:
+    alias: tx_amt
+    desription: 
+    validators:
+    - min: 0.0
+- name: Monto Contracargo (Venta)
+  type: string
+  nullable: false
+  metadata:
+    alias: cb_amt
+    desription: 
+    validators:
+    - min: 0.0
