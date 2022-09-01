@@ -127,12 +127,10 @@ See the  actual [Challenge Solution Notebook](./src/billpocket_de_challenge_winn
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * pyenv
   ```sh
   export PYENV_GIT_TAG=v2.3.3
@@ -152,10 +150,6 @@ More detailed installation instructions can be found in the [pyenv documentation
     pip install -U pipenv
     ```
 More detailed installation instructions can be found in the [Pipenv documentation](https://pipenv.pypa.io/en/latest/install/#installing-pipenv).
-
-
-
-  
 
 
 ### Installation
@@ -240,7 +234,7 @@ Distributed under the MIT License. See the [`LICENSE`](./LICENSE) file for more 
 <!-- CONTACT -->
 ## Contact
 
-[Víctor Gerardo González Quiroga](https://linkedin.com/in/masterquiroga)
+[Víctor Gerardo González Quiroga](https://linkedin.com/in/masterquiroga) for the full ownership of this project.
 
 Project Link: [https://github.com/masterquiroga/billpocket-de-challenge](https://github.com/masterquiroga/billpocket-de-challenge)
 
@@ -251,8 +245,8 @@ Project Link: [https://github.com/masterquiroga/billpocket-de-challenge](https:/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [Carlos Alberto Wong Almaraz](https://www.linkedin.com/in/carlos-alberto-wong-almaraz-5502a3220)
-* [Emanuel Cruz Jiménez](https://www.linkedin.com/in/emmanuelcj)
+* [Carlos Alberto Wong Almaraz](https://www.linkedin.com/in/carlos-alberto-wong-almaraz-5502a3220) for the invitation to this challenge.
+* [Emanuel Cruz Jiménez](https://www.linkedin.com/in/emmanuelcj) for the technical validation of this challenge.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
